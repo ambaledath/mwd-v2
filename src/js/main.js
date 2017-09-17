@@ -1,11 +1,11 @@
-var ambaledath = ambaledath || {};
+var app = app || {};
 
-ambaledath.index = function () {
+app.index = function () {
 
     "use strict";
 
     function init() {
-        console.log(113);
+        console.log('yay');
     }
 
     return {
@@ -16,6 +16,6 @@ ambaledath.index = function () {
 
 document.addEventListener("DOMContentLoaded", function(event) {
 
-    ambaledath.index.init();
+    app.index.init();
 
 });
