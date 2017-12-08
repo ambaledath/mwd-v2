@@ -48,13 +48,13 @@ module.exports = function(grunt) {
         },
 
         // compile sass stylesheets to css -----------------------------------------
-        sass: {
+        less: {
             dist: {
                 options: {
-                    style: 'compressed'
+                    compress: true
                 },
                 files: {
-                    'dist/css/style.min.css': 'src/sass/style.scss'
+                    'dist/css/style.min.css': 'src/less/style.less'
                 }
             }
         },
@@ -112,8 +112,8 @@ module.exports = function(grunt) {
 
         // configure watch for chaanges in JS, SASS and Pug files -------------------
         watch: {
-            files: ['src/**/*.js','src/**/*.pug','src/**/*.scss'],
-            tasks: ['jshint','uglify','pug','sass']
+            files: ['src/**/*.js','src/**/*.pug','src/**/*.less'],
+            tasks: ['jshint','uglify','pug','less']
         }
 
     });
@@ -126,12 +126,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-pug');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // ============= // CREATE TASKS ========== //
-    grunt.registerTask('default', ['jshint', 'uglify', 'pug', 'sass', 'imagemin', 'copy', 'watch']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'pug', 'less', 'imagemin', 'copy', 'watch']);
 
 };
